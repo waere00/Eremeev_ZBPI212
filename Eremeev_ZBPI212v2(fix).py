@@ -13,7 +13,7 @@ Original file is located at
 Напишите **рекурсивную** функцию ```fact```, которая вычисляет факториал заданного числа ```x```.
 """
 
-def fact(x):
+def fact(n):
   if(n==1 or n==0): 
     return 1 
   else: 
@@ -316,7 +316,7 @@ class Student:
         return sum(self.grades) / len(self.grades)
 
     def is_otlichnik(self):
-        if self.mean_grade >= 4.5:
+        if self.mean_grade() >= 4.5:
             return 'YES'
         else:
             return 'NO'
