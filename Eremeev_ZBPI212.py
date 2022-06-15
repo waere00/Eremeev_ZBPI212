@@ -13,7 +13,7 @@ Original file is located at
 Напишите **рекурсивную** функцию ```fact```, которая вычисляет факториал заданного числа ```x```.
 """
 
-def fact(x):
+def fact(n):
   if(n==1 or n==0): 
     return 1 
   else: 
@@ -228,13 +228,11 @@ def substring_slice(path2file_1,path2file_2):
         text1_lines = text1.readlines()
     with open(path2file_2, 'r') as text2:
         text2_lines = text2.readlines()
-
-    with open("резы.txt", 'w') as text3:
-        outlist=[]
-        t1_len = len(text1_lines)
-        for i in range(t1_len):
-            substrt2 = text2_lines[i].strip().split()
-            outlist.append(text1_lines[i][int(substrt2[0]):int(substrt2[1])+1])
+    outlist=[]
+    t1_len = len(text1_lines)
+    for i in range(t1_len):
+        substrt2 = text2_lines[i].strip().split()
+        outlist.append(text1_lines[i][int(substrt2[0]):int(substrt2[1])+1])
     return ' '.join(outlist)
 
 """#8
@@ -318,7 +316,7 @@ class Student:
         return sum(self.grades) / len(self.grades)
 
     def is_otlichnik(self):
-        if self.mean_grade >= 4.5:
+        if self.mean_grade() >= 4.5:
             return 'YES'
         else:
             return 'NO'
